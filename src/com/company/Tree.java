@@ -43,4 +43,47 @@ public class Tree {
         return key <= mainNode.getKey() ? search(mainNode.getLeftNode(), key) : search(mainNode.getRightNode(), key);
     }
 
+
+    public void inorderTraversal(){inorderTraversal(node); }
+
+    private void inorderTraversal(Node node) {
+
+        if(node.getLeftNode() != null)
+            inorderTraversal(node.getLeftNode());
+
+        System.out.print(node.getKey() + ", ");
+
+        if(node.getRightNode() != null)
+            inorderTraversal(node.getRightNode());
+    }
+
+    public void preorderTraversal(){
+        preorderTraversal(node);
+    }
+
+    private void preorderTraversal(Node node) {
+
+        System.out.print(node.getKey() + ", ");
+
+        if(node.getLeftNode() != null)
+            preorderTraversal(node.getLeftNode());
+        if(node.getRightNode() != null)
+            preorderTraversal(node.getRightNode());
+    }
+
+
+    public void postOrderTraversal(){
+        postOrderTraversal(node);
+    }
+
+    private void postOrderTraversal(Node node) {
+
+        if(node.getLeftNode() != null)
+            postOrderTraversal(node.getLeftNode());
+        if(node.getRightNode() != null)
+            postOrderTraversal(node.getRightNode());
+
+        System.out.print(node.getKey() + ", ");
+    }
+
 }
